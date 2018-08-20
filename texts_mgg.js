@@ -98,7 +98,7 @@ y++;
 if(y % 2){
 return '|' ;//timer.innerHTML = "|";
 }else {
-return '' ;//timer.innerHTML = "";
+return ' ' ;//timer.innerHTML = "";
 }
 }
 
