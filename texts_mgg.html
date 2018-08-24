@@ -61,35 +61,35 @@ color: #00FFAB;
 font-size: 45px;
 }
 
-
-
 #shuffle_field {
-height: 500px;
+height: 700px;
 width: 100%;
-background-color: #252d34;
+background-color: #ffffff;
 text-align: center;
 position: absolute;
 }
 
  
 
-.shuffle_p {
+#shuffle_p {
 position: relative;
 margin-top: 200px;
 text-align: center;
-font-family: 'Impact';
+font-family: 'Courier';
 font-size: 40px;
-background-color: #ff2b2b;
 padding-left: 0px;
 padding-right:0px;
 padding-bottom: 10px;
 padding-top: 10px;
-letter-spacing: 3px;
 }
 
+ 
+
 .shuffle_span {
-color: #e9eaea;
+color: #252d34;
 }
+
+ 
 
 #b_gen {
 background-color: #e9eaea;
@@ -97,9 +97,11 @@ height: 30px;
 width: 140px;
 border-radius: 10px;
 color: #191f24;
+
 }
 
- 
+
+  
 
 </style>     
         
@@ -113,7 +115,7 @@ color: #191f24;
 </div>
 
 <div id="shuffle_field">
-                <p class="shuffle_p">
+                <p id="shuffle_p">
                                <span class="shuffle_span" id="0"> 0 </span>
                                <span class="shuffle_span" id="1"> 0 </span>
                                <span class="shuffle_span" id="2"> 0 </span>
@@ -122,9 +124,14 @@ color: #191f24;
                                <span class="shuffle_span" id="5"> 0 </span>
                                <span class="shuffle_span" id="6"> 0 </span>
                                <span class="shuffle_span" id="7"> 0 </span>
-                               </p>
-                               <button id="b_gen" onclick="doc_param_get()"> Generate code </button>
-         </div>
+                            </p>
+                                                                       
+
+                               <button id="b_gen" onclick="doc_param_get()"> Decrypt </button>
+
+                                                                                                                
+
+                </div>
 
 <script src="shuffle.js"></script>
 <script src="texts_mgg.js"></script>

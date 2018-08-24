@@ -4,7 +4,7 @@ var left_img = document.getElementById('shuffle_field');
 
 //password:
 
-var symbols = ["A","B","c","d","E","F","g","H" ];
+var symbols = ["D","A","F","T","C","O","D","E" ];
 
 var symbols_length = symbols.length;
 
@@ -30,23 +30,52 @@ var id_name;
 
 var span_num;
 
+var letter_space =0;
+
+var letter_spac;
+
+
  
 
 function doc_param_get(){
 
-               
+             
 
-                setInterval(function(){
+                                                               setInterval(function(){
 
-                span_num = random_span();
+                letter_spac = document.getElementById('shuffle_p');
 
-                //console.log(span_num);         
+                letter_space = letter_space +  0.1;
 
-                doc_param_change(span_num);
+                letter_spac.style.letterSpacing =  letter_space + 'px';
 
-               
+                                                                               span_num = random_span();
 
-               
+                                                              
+
+                                                               if (doc_param_succes[span_num] == 0){
+
+                                                                               doc_param_change(span_num);            
+
+                                                                               console.log(span_num);
+
+                                                               }
+
+                                                               else if (doc_param_succes[span_num] == 1 && func_fin !== 0){
+
+                                                                               while (doc_param_succes[span_num] == 1){
+
+                                                                                              span_num = random_span();
+
+                                                                               }
+
+                                                               }
+
+                                                              
+
+                //console.log(span_num);        
+
+                
 
                 }, 50);
 
@@ -54,13 +83,20 @@ function doc_param_get(){
 
  
 
+
  
 
 function doc_param_change(span_n){
 
+ 
+
                 doc_par_s = doc_param_succes[span_n];
 
+ 
+
                 checker = random_number();
+
+ 
 
                 if(checker == 9 && doc_par_s == 0){
 
@@ -72,7 +108,7 @@ function doc_param_change(span_n){
 
                                doc_param_succes[span_n] = 1;
 
-               
+             
 
                 all_stuff = '';
 
@@ -80,23 +116,33 @@ function doc_param_change(span_n){
 
                                all_stuff = all_stuff + doc_param_succes[o];
 
+ 
+
                 }
 
                 if (all_stuff == "11111111"){
 
-                               func_fin = 1;      
+                               func_fin = 1;
+
+                                                                                                                 letter_spac.style.letterSpacing =  0 + 'px';
+
+                                                                                                                 letter_space = 0;
+
+                //chancge func_fin to = 1 if want to run function all the time                              
+
+ 
 
                 }
 
-                              
-
-                              
-
                 } else if (doc_par_s == 1){
 
-                              
+                         
 
-                              
+ 
+
+                             
+
+ 
 
                 } else if (checker < 9){
 
@@ -106,25 +152,22 @@ function doc_param_change(span_n){
 
                                change_attr.innerHTML = checker;
 
+ 
+
                 } else {
 
-                              
-
-                              
+ 
 
                 }
-
-               
-
- 
 
 }
 
  
 
-                function random_number(){
 
-                              
+ 
+
+                function random_number(){
 
                                number = Math.floor(Math.random() * (symbols_length+2));
 
@@ -132,39 +175,63 @@ function doc_param_change(span_n){
 
                                }
 
-               
+                             
 
-                              
+ 
 
-                function random_span(){           
+                function random_span(){          
 
-                                              
+ 
 
-                               var random_span_num = Math.floor(Math.random() * (symbols_length));
+                            var random_span_num;//= Math.floor(Math.random() * (symbols_length));
 
-                               //var table_val;               
+                            var sss = 0;  
 
-                               //console.log(random_span_num);
+                            
 
-                               /*while(table_val > 0){
+                            //var table_val;              
 
-               
+                            
 
-                               random_span_num = Math.floor(Math.random() * (symbols_length));
+                            //do {
 
-                              
+                           
 
-                               table_val = doc_param_succes[random_span_num];
+                                                          random_span_num = Math.floor(Math.random() * (symbols_length));
 
-                              
+                              sss = doc_param_succes[random_span_num];
 
-                               }*/
+                              //console.log(random_span_num);
 
-                                                              
+                              //console.log(sss);   
 
-                                              
+                            //}                    
 
-                                              
+                               //while(sss != 0)  //&& all_stuff != "11111111"){
+
+                            
+
+ 
+
+ 
+
+ 
+
+                               //table_val = doc_param_succes[random_span_num];
+
+ 
+
+ 
+
+                             
+
+ 
+
+                             
+
+ 
+
+ 
 
                                                if (func_fin == 1){
 
@@ -180,7 +247,11 @@ function doc_param_change(span_n){
 
                                                }
 
+ 
+
                                }
+
+ 
 
                                                else if (doc_param_succes[random_span_num] == 1){
 
@@ -190,20 +261,15 @@ function doc_param_change(span_n){
 
                                                                random_span_num = random_span_num;
 
+ 
+
                                                                }
 
-                                                              
+ 
 
                                                random_span_num = random_span_num;
-
-                                              
-
-                                              
-
-                                               //console.log(random_span_num);
 
                                                return random_span_num;
 
                 }
 
-         
